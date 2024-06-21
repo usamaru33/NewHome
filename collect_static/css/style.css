@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+body
+{
+  font-family: 'Noto Sans JP', 'Noto Sans JP IE', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  background: #ffffff;
+  color: #212121;
+  word-break: break-all;
+}
+
+body
+{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+}
+
+#circle_logo
+{
+  margin-top: 7px;
+  margin-left: 10px;
+  width: 25%;
+  height: 25%;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0;
+}
+
+.overline
+{
+  clear: both;
+  margin: 0 auto 0 auto;
+}
+
+.overline ul
+{
+  display: table;
+  width: 100%;
+  padding: 0;
+}
+
+.overline li
+{
+  text-align: center;
+  display: table-cell;
+  width: 1%;
+  border: 1px solid #999;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.overline li a
+{
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+}
+
+.title_logo
+{
+  text-align: center;
+}
+
+#wordCustom-wrap .content-wrap-1000px
+{
+  background: #ffffff;
+  margin: 0 auto 3vw;
+  padding: 0 0 2vw 0;
+  position: relative;
+  max-width: 1000px;
+}
+
+#wordCustom .h3_st
+{
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+#wordCustom-wrap .h3_st
+{
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 2vw;
+  padding-bottom: 0.4em;
+  border-bottom: solid 4px #fee100;
+}
+
+#wordCustom-wrap #wordinfo-ticket > table th
+{
+  vertical-align: top;
+  line-height: 1.4;
+  min-width: inherit;
+}
+
+#wordCustom-wrap #wordinfo-ticket > table th
+{
+  background: #fee100;
+  padding: 10px;
+  color: black;
+  vertical-align: middle;
+  min-width: 6em;
+}
+
+#wordCustom-wrap #wordinfo-ticket > table td
+{
+  padding: 20px;
+}
+
+td
+{
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+#wordCustom-wrap #anc_caution
+{
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 2vw;
+  padding-bottom: 0.4em;
+  border-bottom: solid 4px #fee100;
+}
+
+
+
+#footer {
+  clear: both;
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  text-align: center;
+  color: black;
+  border-top: solid 4px; /*フッターの線の太さ*/
+  border-top-color: #ffd900; /*フッターの線の色*/
+  
+  /*background-image:linear-gradient(90deg, rgba(39, 74, 120, 0.5) 50%, transparent 50%), linear-gradient(rgba(39, 74, 120, 0.5) 50%, transparent 50%);*/
+  background-size: 50px 50px; 
+}
+
+/* Bootstrapのデフォルトのボタンの余分な余白やパディングを削除する */
+.btn {
+  margin: 0; /* 外側の余白を削除 */
+  padding: 0; /* 内側のパディングを削除 */
+}
