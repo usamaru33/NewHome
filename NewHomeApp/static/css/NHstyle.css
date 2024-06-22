@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*リンクのスタイル*/
+a:link{
+    color:#ffffff;
+    text-decoration: none;
+}
+a:link.head_name{
+  color:#ffffff;
+}
+a:visited{
+    color:#ffffff;
+    text-decoration: none;
+}
+a {
+  position: relative;
+  display: inline-block;
+}
+a.link::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #FFF;
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+a.link:hover::after {
+  width: 100%;
+}
+
+
+/* ヘッダーのスタイル */
+header {
+    position: sticky;
+    font-family: "Mamelon" ;
+    background-color: #ff4855;
+    color: white;
+    padding: 10px;
+    top:0;
+    z-index: 99;
+}
+.logo {
+    width: 5%;
+    height: 5%;
+    font-weight: bold;
+    font-size: 24px;
+}
+.head_name{
+    font-size: 40px;
+    padding:0;
+    margin: 0;
+    color:#ffffff
+}
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-content: end;
+    font-size: 20px;
+    margin: 0;
+  }
+
+
+/* スライダーのスタイル */
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin:0;
+}
+
+.prev, .next {
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.slider{
+    width: 100%;
+    height: 600px;
+    position: relative;
+  }
+  .slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: img-change 20s infinite; /* 合計時間を60秒に変更 */
+  }
+  
+  .slide-content:nth-child(1) {
+    animation-delay: 15s;
+  }
+  .slide-content:nth-child(2) {
+    animation-delay: 0s; /* 10秒ごとにずらす */
+  }
+  .slide-content:nth-child(3) {
+    animation-delay: 5s; /* 10秒ごとにずらす */
+  }
+  .slide-content:nth-child(4) {
+    animation-delay: 10s; /* 10秒ごとにずらす */
+  }
+  
+  .slide-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes img-change {
+    0% {
+      opacity: 1; /* 開始時は不透明 */
+    }
+    20% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0; /* 25%の時点で透明に */
+    }
+    95% {
+      opacity: 0; /* 95%まで透明のまま */
+    }
+    100% {
+      opacity: 1; /* 100%で不透明に */
+    }
+  }
+
+  .dot-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.dot {
+  background-color: #bbb;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  position: relative; /* 重ねて表示する(下) */
+}
+
+.dot.active {
+  background-color: black;
+  transform: scale(0.7);
+  position: absolute; /* 重ねて表示(上)*/
+  z-index: 88;
+}
+
+
+
+
+/* 最新ニュースのスタイル */
+.news {
+  padding: 20px;
+  margin:0;
+  background-color: #f2f2f2;
+}
+
+.news-item {  
+  background-color: white;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+
+
+/* サークル概要のスタイル */
+.summary {
+  display: flex;
+  justify-content: center; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+  flex-direction: column; /* 子要素を縦方向に並べる */
+  text-align: center; /* テキストを中央揃え */
+  padding: 20px;
+  margin: 0;
+  background-color: #f2f2f2;
+  min-height: 50vh; /* セクションの最小高さを設定 */
+}
+
+.summary_text {
+  position: relative;
+  line-height: 1.25;
+  font-family: "Mamelon";
+  font-size: 38px;
+  margin: 0; /* マージンをリセット */
+  z-index: 3;
+  width: 100%; /* 幅を100%に設定 */
+  max-width: 800px; /* 最大幅を設定 */
+}
+
+.summary_text p {
+  margin: 20px 0; /* テキストの上下にマージンを設定 */
+}
+
+strong {
+  text-decoration: underline;
+  text-decoration-color: #FF8C8C;
+  font-weight: normal;
+}
+
+strong.unei {
+  font-size: 300%;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0;
+}
+
+.frame1 {
+  width: 100%;
+  max-width: 200px; /* 画像の最大幅を設定 */
+  height: auto; /* 画像の高さを自動調整 */
+  margin-bottom: 20px; /* 画像の下にマージンを設定 */
+}
+.summary_img{
+  width: 20%;
+  height: 20%;
+  padding: 0px; 
+  text-align: right ;
+}
+.fade {
+  opacity: 0;
+  transition: opacity 3.0s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.frame1 {
+  position: absolute;
+  padding: 0px 0px 0px 130px ;
+  z-index: 2; /* テキストの下に配置 */
+}
+
+
+/*活動場所・日時のスタイル*/
+.activity{
+  padding: 20px;
+  margin:0;
+  background-color: #f2f2f2;
+}
+.activity_grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-content: end;
+}
+.activity_text{
+  position: relative;
+  line-height: 3;
+  font-family: "Mamelon" ;
+  font-size: 32px;
+}
+.activity_content{
+  display: inline;
+  padding: 0;
+}
+.sh{
+  font-size: 150%;
+  font-weight: 200%;
+  background-color: white;
+}
+.map{
+  align-items: right;
+  padding: 0 50px 0 0 ;
+}
+
+.Loglink{
+  color: black;
+}
+
+/*フッターのスタイル*/
+.footer{
+  padding: 20px;
+  margin:0;
+  background-color: #f2f2f2;
+  color: #868383 ;
+  font-family: "Mamelon";
+  z-index: -1;
+}
+#foot_text{
+  color: #000;;
+}
+
+.Ques{
+  font-size: 150%;
+  color: #000;
+  font-family: Arial;
+}
+
+/*フォントの導入*/
+@font-face { 
+    /* ① ここにfont-familyで指定したい名前を書く*/
+    font-family: "Mamelon"; 
+    /* フォントが置かれているパスを書く */ 
+    src: url("font/Mamelon-5-Hi-Regular.otf") format("truetype") 
+}
