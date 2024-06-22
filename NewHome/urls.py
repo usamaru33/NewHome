@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views  # views.pyからインポート
+from NewHomeApp.views import UserListView  # views.pyからインポート
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', views.UserListView.as_view(), name='user'),
-    path('login/', views.login_view, name='login'),  # 修正済み
-    path('home/', views.home_page, name='home'),  # home_pageビューを追加
+    path('', UserListView.as_view(), name='user'),
+    path('login/', UserListView.login_view(), name='login'),
+    path('home/', UserListView.edit_page, name='edit'),  # edit_pageビューを追加
 ]
 
 

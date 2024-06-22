@@ -10,24 +10,24 @@ class UserListView(generic.ListView):
     context_object_name = 'users'
 
 # ログイン後に表示するページ
-def home_page(request):
-    return render(request, 'Edit.html')
+    def edit_page(request):
+        return render(request, 'Edit.html')
 
 # ログイン時に表示するページとログイン機能
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+    def login_view(request):
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
 
-        # ユーザー認証
-        user = authenticate(request, username=username, password=password)
+            # ユーザー認証
+            user = authenticate(request, username=username, password=password)
 
-        if user is not None:
-            # ログイン成功
-            auth_login(request, user)
-            return redirect('home')
-        else:
+            if user is not None:
+                # ログイン成功
+                auth_login(request, user)
+                return redirect('edit')
+            else:
             # ログイン失敗
-            messages.error(request, 'ユーザー名またはパスワードが間違っています。')
+                messages.error(request, 'ユーザー名またはパスワードが間違っています。')
 
-    return render(request, 'Login.html')
+        return render(request, 'login')
