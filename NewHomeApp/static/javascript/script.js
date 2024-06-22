@@ -1,4 +1,6 @@
 window.onload = function() {
+  console.log("script.js has been loaded successfully");
+
   // ボタンのサイズを設定する関数
   function setButtonWidth() {
     // 画面の幅を取得

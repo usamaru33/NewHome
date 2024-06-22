@@ -1,6 +1,9 @@
+from django.contrib import admin
 from django.urls import path
-from .views import title_page
+from NewHomeApp.views import UserListView
 
 urlpatterns = [
-    path('', title_page, name='title_page'),
+    path('admin/', admin.site.urls),
+    path('', UserListView.as_view(), name='user'), #ルートにアクセスしたらuser_list.htmlにアクセスする
 ]
+

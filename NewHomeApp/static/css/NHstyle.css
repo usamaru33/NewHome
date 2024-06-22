@@ -188,30 +188,52 @@ header {
 
 
 
-/*サークル概要のスタイル*/
-.summary{
+/* サークル概要のスタイル */
+.summary {
+  display: flex;
+  justify-content: center; /* 水平方向に中央揃え */
+  align-items: center; /* 垂直方向に中央揃え */
+  flex-direction: column; /* 子要素を縦方向に並べる */
+  text-align: center; /* テキストを中央揃え */
   padding: 20px;
-  margin:0;
+  margin: 0;
   background-color: #f2f2f2;
+  min-height: 50vh; /* セクションの最小高さを設定 */
 }
-.summary_text p {
+
+.summary_text {
   position: relative;
   line-height: 1.25;
-  font-family: "Mamelon" ;
+  font-family: "Mamelon";
   font-size: 38px;
-  margin:60px 180px;
+  margin: 0; /* マージンをリセット */
   z-index: 3;
+  width: 100%; /* 幅を100%に設定 */
+  max-width: 800px; /* 最大幅を設定 */
 }
-strong{
-  text-decoration:underline;
+
+.summary_text p {
+  margin: 20px 0; /* テキストの上下にマージンを設定 */
+}
+
+strong {
+  text-decoration: underline;
   text-decoration-color: #FF8C8C;
   font-weight: normal;
 }
-strong.unei{
+
+strong.unei {
   font-size: 300%;
   text-align: center;
   line-height: 1.2;
-  padding: 0px 0px 0px 50px;
+  padding: 0;
+}
+
+.frame1 {
+  width: 100%;
+  max-width: 200px; /* 画像の最大幅を設定 */
+  height: auto; /* 画像の高さを自動調整 */
+  margin-bottom: 20px; /* 画像の下にマージンを設定 */
 }
 .summary_img{
   width: 20%;
